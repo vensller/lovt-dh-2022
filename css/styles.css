@@ -26,8 +26,30 @@ header {
 }
 
 .banner {
-  background: url("../images/Home_2.png");
+  background: url("../images/Rectangle1.svg");
   height: 350px;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.hamburguer-menu {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.navbar {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  display: none;
+}
+
+@media(min-width: 481px) {
+  .hamburguer-menu {
+    display: none;
+  }
+  .navbar {
+    display: block;
+  }
 }
