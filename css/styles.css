@@ -63,6 +63,8 @@ main {
   font-size: 25px;
   line-height: 27px;
   color: #888888;
+
+  animation: money 3s infinite;
 }
 
 .advertisement span {
@@ -75,6 +77,24 @@ main {
   color: #FFFFFF;
   border-radius: 10px;
   padding: 3px;
+  transition: background .5s;
+}
+
+.advertisement span:hover {
+  background: #ffae00;  
+}
+
+.advertisement p {
+  font-family: 'Ropa Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 11px;
+  text-align: justify;
+  color: #555555;
+  padding: 0 10px 10px 10px;
+
+  animation: updown 5s;
 }
 
 .advertisement div {
@@ -91,5 +111,42 @@ main {
   }
   .navbar {
     display: block;
+  }
+}
+
+@keyframes money {
+  0% {
+    color: #888888;
+    font-size: 20px;
+  }
+
+  50% {
+    color: #008e1c;
+    font-size: 30px;
+  }
+
+  100% {
+    color: #888888;
+    font-size: 20px;
+  }
+}
+
+@keyframes updown {
+  0% {
+    opacity: 0%;
+    transform: translateY(-200px);
+  }
+
+  30% {
+    transform: translateY(-100px) translateX(200px) rotate(90deg);
+  }
+
+  70% {
+    transform: translateY(-100px) translateX(200px) rotate(270deg);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: rotate(360deg)
   }
 }
