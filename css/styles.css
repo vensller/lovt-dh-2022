@@ -6,10 +6,15 @@
 header {
   background: #fff;
   box-shadow: 0px 2px 10px 0px #00000040;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 45px;
 }
 
 main {
-  padding: 30px;
+  padding: 10px 45px;
 }
 
 .title {
@@ -30,16 +35,31 @@ main {
 }
 
 .banner {
-  background: url("../images/Rectangle1.svg");
-  height: 350px;
+  background: url("../images/Rectangle1.svg");  
   background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 350px;
+  padding: 0px 10px;
 }
 
-.hamburguer-menu {
-  float: right;
-  margin-top: 10px;
-  margin-right: 10px;
+.arrow-button {
+  background: rgba(141, 141, 141, 0.62);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar {
@@ -64,11 +84,18 @@ main {
   line-height: 27px;
   color: #888888;
 
-  animation: money 3s infinite;
+  /* animation: money 3s infinite; */
+}
+
+.mustard-text {
+  background: #DC9730;
+}
+
+.green-text {
+  background: #51D275;
 }
 
 .advertisement span {
-  background: #51D275;
   font-family: 'Ropa Sans';
   font-style: normal;
   font-weight: 400;
@@ -94,7 +121,7 @@ main {
   color: #555555;
   padding: 0 10px 10px 10px;
 
-  animation: updown 5s;
+  /* animation: updown 5s; */
 }
 
 .advertisement div {
@@ -105,7 +132,14 @@ main {
   padding: 10px;
 }
 
-@media(min-width: 481px) {
+.sales {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media(min-width: 769px) {
   .hamburguer-menu {
     display: none;
   }
