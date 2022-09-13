@@ -15,6 +15,9 @@ header {
 
 main {
   padding: 10px 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .title {
@@ -38,14 +41,14 @@ main {
   background: url("../images/Rectangle1.svg");  
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  height: 350px;
+  height: 30vh;
   padding: 0px 10px;
 }
 
@@ -62,18 +65,11 @@ main {
   align-items: center;
 }
 
-.navbar {
-  float: right;
-  margin-top: 10px;
-  margin-right: 10px;
-  display: none;
-}
-
 .advertisement {  
   display: flex;
   flex-direction: column;
-  width: 256px;
   background: #EEEEEE;
+  max-width: 660px;
 }
 
 .advertisement strong {
@@ -134,9 +130,10 @@ main {
 
 .sales {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
 }
 
 #style-industrial {
@@ -161,7 +158,6 @@ main {
 }
 
 .styles {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -210,12 +206,13 @@ main {
 
 footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
   background: #333333;
   padding: 40px 45px;
+  gap: 20px;
 }
 
 #contacts {
@@ -225,6 +222,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 #contacts span {
@@ -247,12 +245,43 @@ footer {
   color: #FFFFFF;
 }
 
-@media(min-width: 769px) {
-  .hamburguer-menu {
-    display: none;
+@media(min-width: 481px) {
+  footer {
+    flex-direction: row;
   }
-  .navbar {
-    display: block;
+}
+
+@media(min-width: 769px) {
+  .sales {
+    flex-direction: row;
+  }
+  
+  header {
+    padding: 10px 45px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  #title-description {
+    font-size: 15px;
+  }
+
+  .hamburguer-menu {
+    width: 32px;
+  }
+
+  #contacts span {
+    font-size: 15px;
+  }
+
+  #contacts strong {
+    font-size: 15px;
+  }
+
+  #google-maps {
+    width: 320px;
   }
 }
 
