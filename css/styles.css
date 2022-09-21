@@ -50,6 +50,7 @@ main {
 
   height: 30vh;
   padding: 0px 10px;
+  transition: background 0.5s;
 }
 
 .arrow-button {
