@@ -246,6 +246,36 @@ footer {
   color: #FFFFFF;
 }
 
+#sidebar-menu {
+  position: absolute;
+  width: 250px;
+  top: 52px;
+  right: 0;
+  background: #fff;
+  box-shadow: -2px 2px 4px 2px #00000061;
+}
+
+#sidebar-menu ul {
+  list-style: none;
+}
+
+#sidebar-menu li {
+  font-family: 'Ropa Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 27px;
+  color: #888888;
+  padding: 15px;
+  text-align: center ;
+  transition: all 0.3s;
+}
+
+#sidebar-menu li:hover {
+  cursor: pointer;
+  text-shadow: 1px 0px 2px rgb(107 109 79);
+}
+
 @media(min-width: 481px) {
   footer {
     flex-direction: row;

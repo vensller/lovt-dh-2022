@@ -44,3 +44,21 @@ setInterval(() => {
     contador = 0;
   } else contador++;
 }, 5000);
+
+// Selecionar o hamburger menú
+const menu = document.querySelector(".hamburguer-menu");
+
+// Reagir ao evento de click
+menu.addEventListener("click", () => {
+  console.log("O menu foi clicado");
+});
+
+// // Reagir ao evento de passar o mouse pelo menu
+// menu.addEventListener("mouseover", () => {
+//   console.log("Passei o mouse");
+// });
+
+// // Reagir ao evento do momento de tirar o mouse do menu
+// menu.addEventListener("mouseout", () => {
+//   console.log("Tirei o mouse");
+// });
