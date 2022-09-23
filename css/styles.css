@@ -253,6 +253,7 @@ footer {
   right: 0;
   background: #fff;
   box-shadow: -2px 2px 4px 2px #00000061;
+  display: none;
 }
 
 #sidebar-menu ul {
@@ -274,6 +275,55 @@ footer {
 #sidebar-menu li:hover {
   cursor: pointer;
   text-shadow: 1px 0px 2px rgb(107 109 79);
+}
+
+.sidebar-visible {
+  display: block !important;
+}
+
+#contact-us form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#contact-us h2 {
+  font-family: 'Ropa Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 27px;
+  color: #fff;
+}
+
+#contact-us textarea {
+  height: 100px;
+}
+
+#contact-us button {
+  background-color: #fff;
+  color: #333333;
+  font-size: 18px;
+  padding: 5px;
+  border: 0;
+  border-radius: 10px;
+}
+
+#contact-us textarea, #contact-us input {
+  padding: 5px;
+  border-radius: 10px;
+  border: 0;
+}
+
+#contact-details {
+  font-family: 'Ropa Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 27px;
+  color: #fff;
 }
 
 @media(min-width: 481px) {

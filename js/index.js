@@ -47,10 +47,19 @@ setInterval(() => {
 
 // Selecionar o hamburger menú
 const menu = document.querySelector(".hamburguer-menu");
+const sidebar = document.getElementById("sidebar-menu");
 
 // Reagir ao evento de click
-menu.addEventListener("click", () => {
-  console.log("O menu foi clicado");
+menu.addEventListener("click", (event) => {
+  console.log(event);
+  sidebar.classList.toggle("sidebar-visible");
+
+  // Validação feita pelo método toggle
+  // if (sidebar.classList.contains("sidebar-visible")) {
+  //   sidebar.classList.remove("sidebar-visible");
+  // } else {
+  //   sidebar.classList.add("sidebar-visible");
+  // }
 });
 
 // // Reagir ao evento de passar o mouse pelo menu
@@ -62,3 +71,13 @@ menu.addEventListener("click", () => {
 // menu.addEventListener("mouseout", () => {
 //   console.log("Tirei o mouse");
 // });
+
+// Mostrar ao usuário que faltam X letras para a mensagem poder ser enviada
+// (mínimo 100)
+const textMessage = document.getElementById("contact-message");
+const textDetails = document.getElementById("contact-details");
+
+textMessage.addEventListener("input", (event) => {
+  const charsLeft = 100 - event.target.value.length;
+  textDetails.innerText = `At least ${charsLeft} characteres needed`;
+});
