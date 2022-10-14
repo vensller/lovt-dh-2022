@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LOVT</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="stylesheets/styles.css" />
 </head>
 <body>
   <header>
@@ -37,27 +37,18 @@
     </section>
     
     <section class="sales">
-      <div class="advertisement">
-        <img src="images/Rectangle2.svg" />
-        <div>
-          <strong>$1200</strong>
-          <span class="green-text">New</span>
+      <% for (let immobile of immobileList) { %>
+        <div class="advertisement">
+          <img src="<%=immobile.picture%>" />
+          <div>
+            <strong><%=immobile.price%></strong>
+            <span class="green-text"><%=immobile.status%></span>
+          </div>
+          <p id="paragraph">
+            <%=immobile.description%>
+          </p>
         </div>
-        <p id="paragraph">
-          Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Casamentiss faiz malandris se pirulitá. Cevadis im ampola pa
-        </p>
-      </div>
-
-      <div class="advertisement">
-        <img src="images/Rectangle3.svg" />
-        <div>
-          <strong>$2000</strong>
-          <span class="mustard-text">Sale</span>
-        </div>
-        <p>
-          Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Casamentiss faiz malandris se pirulitá. Cevadis im ampola pa
-        </p>
-      </div>
+      <% } %>
     </section>
 
     <section class="styles">
@@ -107,6 +98,6 @@
     </div>
   </footer>
 
-  <script src="js/index.js"></script>
+  <script src="javascripts/index.js"></script>
 </body>
 </html>

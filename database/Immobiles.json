@@ -1,0 +1,20 @@
+[
+  {
+    "picture": "https://www.quintoandar.com.br/img/xxl/893775363-491.47032931916743IMG9660.jpg",
+    "price": "R$ 25.000",
+    "status": "for rent",
+    "description": "Espaçoso apartamento para alugar com 3 quartos, sendo 3 suítes, e 4 banheiros no total. Este apartamento é bem equipado, bom para quem procura conforto e comodidade e fica situado no 4º andar."
+  },
+  {
+    "picture": "https://www.quintoandar.com.br/img/xxl/893033852-502.58818657470385IMG1515HDR.jpg",
+    "price": "R$ 12.000",
+    "status": "for rent",
+    "description": "Minha casa é localizada em um local privilegiado, vizinhança muito boa, a rua e o Parque São Jorge é bem arborizado, tem acesso fácil ao Centro de Florianópolis e as praias do Norte da ilha, Sul e para a Lagoa da Conceição."
+  },
+  {
+    "picture": "https://www.quintoandar.com.br/img/xxl/893704784-71.26552224863336MG6548.JPG",
+    "price": "R$ 10.660",
+    "status": "for rent",
+    "description": "Box, Varanda, Piscina privativa, Armários embutidos no quarto, Armários nos banheiros, Armários na cozinha, Ar condicionado, Chuveiro a gás, Fogão incluso, Geladeira inclusa, Closet, Cozinha americana, Mesas e cadeiras de escritório, Jardim, Quintal, Somente uma casa no terreno, Área de serviço."
+  }
+]
