@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alterar imóveis</title>
+</head>
+<body>
+  <form method="post" action="?_method=PUT">
+    <label for="picture">Foto</label>
+    <input id="picture" name="picture" type="text" value="<%=immobile.picture%>"/>
+
+    <label for="price">Preço</label>
+    <input id="price" name="price" type="text" value="<%=immobile.price%>"/>
+
+    <label for="status">Status</label>
+    <input id="status" name="status" type="text" value="<%=immobile.status%>"/>
+
+    <label for="description">Descrição</label>
+    <input id="description" name="description" type="text" value="<%=immobile.description%>"/>
+
+    <button type="submit">Alterar</button>
+  </form>
+</body>
+</html>
