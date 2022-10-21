@@ -5,8 +5,18 @@ function showCreatePage(req, res) {
 }
 
 function createImmobile(req, res) {
+  // Se tiver req.file, vamos usar o req.file
+  // Se não, vamos usar o picture
+  let fileLocation = "";
+
+  if (req.file) {
+    fileLocation = `/uploads/${req.file.filename}`;
+  } else {
+    fileLocation = picture;
+  }
+
   const { picture, price, status, description } = req.body;
-  ImmobileModel.create(picture, price, status, description);
+  ImmobileModel.create(fileLocation, price, status, description);
   return res.redirect("/");
 }
 
@@ -17,7 +27,20 @@ function showEditPage(req, res) {
 }
 
 function updateById(req, res) {
-  // Implementar a função
+  const { id } = req.params;
+  const { picture, price, status, description } = req.body;
+  // Se tiver req.file, vamos usar o req.file
+  // Se não, vamos usar o picture
+  let fileLocation = "";
+
+  if (req.file) {
+    fileLocation = `/uploads/${req.file.filename}`;
+  } else {
+    fileLocation = picture;
+  }
+
+  ImmobileModel.update(id, fileLocation, price, status, description);
+  return res.redirect("/");
 }
 
 module.exports = {

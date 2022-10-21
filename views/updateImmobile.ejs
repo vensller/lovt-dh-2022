@@ -7,9 +7,12 @@
   <title>Alterar imóveis</title>
 </head>
 <body>
-  <form method="post" action="?_method=PUT">
+  <form method="post" action="?_method=PUT" enctype="multipart/form-data">
     <label for="picture">Foto</label>
     <input id="picture" name="picture" type="text" value="<%=immobile.picture%>"/>
+
+    <label for="file">Foto</label>
+    <input id="file" name="file" type="file" accept="image/png, image/jpeg"/>
 
     <label for="price">Preço</label>
     <input id="price" name="price" type="text" value="<%=immobile.price%>"/>
