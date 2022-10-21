@@ -43,9 +43,16 @@ function updateById(req, res) {
   return res.redirect("/");
 }
 
+function deleteById(req, res) {
+  const { id } = req.params;
+  ImmobileModel.deleteById(id);
+  return res.redirect("/");
+}
+
 module.exports = {
   showCreatePage,
   createImmobile,
   showEditPage,
   updateById,
+  deleteById,
 };

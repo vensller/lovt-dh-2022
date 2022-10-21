@@ -47,9 +47,19 @@ function update(id, picture, price, status, description) {
   fs.writeFileSync("database/Immobiles.json", JSON.stringify(immobileList));
 }
 
+function deleteById(id) {
+  // Buscar todos os imóveis
+  // Remover o imóvel do index = id
+  // Salvar a lista novamente
+  const immobileList = getAll();
+  immobileList.splice(id, 1);
+  fs.writeFileSync("database/Immobiles.json", JSON.stringify(immobileList));
+}
+
 module.exports = {
   getAll,
   create,
   getById,
   update,
+  deleteById,
 };

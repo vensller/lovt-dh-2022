@@ -12,5 +12,6 @@ router.post(
 );
 router.get("/:id/editar", controller.showEditPage);
 router.put("/:id/editar", multerUpload.single("file"), controller.updateById);
+router.delete("/:id/editar", controller.deleteById);
 
 module.exports = router;
