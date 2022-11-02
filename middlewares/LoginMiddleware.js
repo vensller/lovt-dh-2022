@@ -1,4 +1,6 @@
 const { body, validationResult } = require("express-validator");
+const jwt = require("jsonwebtoken");
+const { jwtKey } = require("../config/secrets");
 
 function validateUser(req, res, next) {
   console.log("Olá, cheguei no middleware");
@@ -37,7 +39,29 @@ const fieldsValidation = [
     .withMessage("A senha precisa ter pelo menos 5 caracteres"),
 ];
 
+function validateToken(req, res, next) {
+  const { token } = req.cookies;
+
+  // Se não tiver token, redireciona para a página de login
+  if (!token) {
+    return res.redirect("/login");
+  }
+
+  // Se o token for inválido, redireciona para a página de login
+  try {
+    const decoded = jwt.verify(token, jwtKey);
+    console.log(decoded);
+  } catch (error) {
+    res.cookie("token", "");
+    return res.redirect("/login");
+  }
+
+  // Se tiver token e o token for válido, deixa continuar
+  next();
+}
+
 module.exports = {
   validateUser,
   fieldsValidation,
+  validateToken,
 };
