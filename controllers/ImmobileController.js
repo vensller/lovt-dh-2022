@@ -1,3 +1,11 @@
+// Exercício da aula do dia 06/12/2022
+// 1 - Excluir o model de imoveis
+// 2 - Criar o model de imóveis utilizando o padrão do Sequelize
+// 3 - Alterar o método de createImmobile para utilizar o novo model
+// 4 - Alterar o método updateById para utilizar o novo model
+// 5 - Alterar o método deleteById para utilizar o novo model
+// 6 - Alterar o método showEditPage para utilizar o novo model
+
 const ImmobileModel = require("../models/Immobile");
 
 function showCreatePage(req, res) {
