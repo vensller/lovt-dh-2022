@@ -1,7 +1,14 @@
 const database = require("../database/models");
 
 function getUsers(req, res) {
-  database.User.findAll().then((data) => {
+  database.User.findAll({
+    include: [
+      {
+        model: database.LoginHistory,
+        as: "login_history",
+      },
+    ],
+  }).then((data) => {
     res.json(data);
   });
 }

@@ -25,5 +25,13 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
+
+  User.associate = function (models) {
+    User.hasMany(models.LoginHistory, {
+      as: "login_history",
+      foreignKey: "user_id",
+    });
+  };
+
   return User;
 };
