@@ -19,6 +19,12 @@ module.exports = (sequelize, DataTypes) => {
       lastName: {
         type: DataTypes.STRING,
       },
+      history: {
+        type: DataTypes.VIRTUAL,
+        get() {
+          return `http://localhost:3000/users/${this.id}/login_history`;
+        },
+      },
     },
     {
       tableName: "users",
