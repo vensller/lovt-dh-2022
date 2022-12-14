@@ -19,5 +19,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
+  Category.associate = (models) => {
+    Category.hasMany(models.Immobile, {
+      as: "Immobile",
+      foreignKey: "category_id",
+    });
+  };
+
   return Category;
 };

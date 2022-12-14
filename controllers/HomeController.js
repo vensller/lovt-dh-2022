@@ -1,7 +1,7 @@
-const ImmobileModel = require("../models/Immobile");
+const database = require("../database/models");
 
-function index(req, res) {
-  const immobileList = ImmobileModel.getAll();
+async function index(req, res) {
+  const immobileList = await database.Immobile.findAll();
   res.render("index", { immobileList });
 }
 

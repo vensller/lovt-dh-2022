@@ -6,13 +6,51 @@
 // 5 - Alterar o método deleteById para utilizar o novo model
 // 6 - Alterar o método showEditPage para utilizar o novo model
 
-const ImmobileModel = require("../models/Immobile");
+const database = require("../database/models");
 
-function showCreatePage(req, res) {
-  return res.render("createImmobile");
+async function showCreatePage(req, res) {
+  let findAllCategories = await database.Category.findAll();
+  return res.render("createImmobile", { categories: findAllCategories });
 }
 
-function createImmobile(req, res) {
+async function createImmobile(req, res) {
+  // Se tiver req.file, vamos usar o req.file
+  // Se não, vamos usar o picture
+  const { picture, price, status, description, category } = req.body;
+
+  let fileLocation = "";
+
+  if (req.file) {
+    fileLocation = `/uploads/${req.file.filename}`;
+  } else {
+    fileLocation = picture;
+  }
+
+  await database.Immobile.create({
+    picture: fileLocation,
+    price,
+    istatus: status,
+    idescription: description,
+    category_id: category,
+  });
+  return res.redirect("/");
+}
+
+async function showEditPage(req, res) {
+  const { id } = req.params;
+  let findAllCategories = await database.Category.findAll();
+  const immobile = await database.Immobile.findOne({
+    where: { id },
+  });
+  return res.render("updateImmobile", {
+    immobile,
+    categories: findAllCategories,
+  });
+}
+
+async function updateById(req, res) {
+  const { id } = req.params;
+  const { picture, price, status, description, category } = req.body;
   // Se tiver req.file, vamos usar o req.file
   // Se não, vamos usar o picture
   let fileLocation = "";
@@ -23,37 +61,26 @@ function createImmobile(req, res) {
     fileLocation = picture;
   }
 
-  const { picture, price, status, description } = req.body;
-  ImmobileModel.create(fileLocation, price, status, description);
+  await database.Immobile.update(
+    {
+      picture: fileLocation,
+      price,
+      istatus: status,
+      idescription: description,
+      category_id: category,
+    },
+    {
+      where: { id },
+    }
+  );
   return res.redirect("/");
 }
 
-function showEditPage(req, res) {
+async function deleteById(req, res) {
   const { id } = req.params;
-  const immobile = ImmobileModel.getById(id);
-  return res.render("updateImmobile", { immobile });
-}
-
-function updateById(req, res) {
-  const { id } = req.params;
-  const { picture, price, status, description } = req.body;
-  // Se tiver req.file, vamos usar o req.file
-  // Se não, vamos usar o picture
-  let fileLocation = "";
-
-  if (req.file) {
-    fileLocation = `/uploads/${req.file.filename}`;
-  } else {
-    fileLocation = picture;
-  }
-
-  ImmobileModel.update(id, fileLocation, price, status, description);
-  return res.redirect("/");
-}
-
-function deleteById(req, res) {
-  const { id } = req.params;
-  ImmobileModel.deleteById(id);
+  await database.Immobile.destroy({
+    where: { id },
+  });
   return res.redirect("/");
 }
 
