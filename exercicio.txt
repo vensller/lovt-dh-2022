@@ -1,0 +1,9 @@
+- Criar um projeto do zero utilizando express-generator
+- Instalar o sequelize
+- Criar uma Migration(Sequelize ou SQL) para criação da tabela Usuários, que conterá Id, Nome, Email e Senha.
+- Criar o model de Usuários
+- Criar um CRUD completo de Usuários, utilizando somente chamadas HTTP (GET, POST, PUT e DELETE). As responses devem ser no formato JSON.
+- Criar uma Migration(Sequelize ou SQL) para criação da tabela de Endereços, que conterá ID, Rua, Bairro, Cidade, Estado, Numero e uma FK para o Usuário.
+- Criar o model de Endereços com seu relacionamento.
+- Criar o relacionamento de Usuários com Endereços no model de Usuários
+- Criar um CRUD completo de Endereços, utilizando somente chamadas HTTP (GET, POST, PUT e DELETE). As responses devem ser no formato JSON.
